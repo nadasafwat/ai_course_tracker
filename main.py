@@ -3,18 +3,12 @@ import schedule
 from course_scraper import scrape_urls
 from storage import Storage
 from notifier import send_telegram_message
-
-
 urls = [
     "https://www.udemy.com/courses/it-and-software/it-certification/?closed_captions=en&closed_captions=en_cc&instructional_level=beginner&instructional_level=all&instructional_level=intermediate&instructional_level=expert&lang=en&price=price-free&ratings=4.0&sort=most-reviewed",
     "https://www.udemy.com/courses/it-and-software/other-it-and-software/?closed_captions=en&closed_captions=en_cc&lang=en&price=price-free&ratings=4.0&sort=most-reviewed",
     "https://www.coursera.org/search?language=Arabic&language=English&productTypeDescription=Professional%20Certificates&subtitleLanguage=English&subtitleLanguage=Arabic&topic=Computer%20Science&topic=Information%20Technology&sortBy=BEST_MATCH",
 ]
-
-
 storage = Storage("sent_courses.json")
-
-
 def format_message(course):
     msg = (
         "🔥 New Free Course Found!\n\n"
